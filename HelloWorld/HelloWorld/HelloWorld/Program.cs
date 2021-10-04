@@ -6,8 +6,6 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            
-
             Console.WriteLine("Zadej teplotu ve F: ");
             var inpstr = Console.ReadLine();
             double temp = double.Parse(inpstr);
@@ -16,9 +14,7 @@ namespace HelloWorld
 
         static double FahrenheitToCelsius(double temp)
         {
-            double cel = (temp - 32) / 1.8;
-
-            return cel;
+            return Math.Round(((temp - 32) / 1.8), 2);
         }
 
         static int Max(int a, int b)
