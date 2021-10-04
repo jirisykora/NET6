@@ -10,26 +10,21 @@ namespace HelloWorld
             int b = 45678;
 
             Console.WriteLine($"a = {a}, b= {b}");
-            int res = GetGreaterNumber(a, b);
-            if(res == a)
-            {
-                Console.WriteLine($"Cislo {a} je vetsi nez cislo {b}");
-            }
-            else
-            {
-                Console.WriteLine($"Cislo {b} je vetsi nez cislo {a}");
-            }
+            int res = Max(a, b);
+            
             
         }
 
-        static int GetGreaterNumber(int a, int b)
+        static int Max(int a, int b)
         {
             if(a > b)
             {
+                Console.WriteLine($"Cislo {a} je vetsi nez cislo {b}");
                 return a;
             }
             else
             {
+                Console.WriteLine($"Cislo {b} je vetsi nez cislo {a}");
                 return b;
             }
         }
