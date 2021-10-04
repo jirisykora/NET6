@@ -7,8 +7,8 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Zadej jmeno: ");
-            var inpstr = Console.ReadLine();
-            Hello(inpstr);
+            //var inpstr = Console.ReadLine();
+            Hello(Console.ReadLine());
         }
 
         static int Max(int a, int b)
@@ -35,7 +35,14 @@ namespace HelloWorld
 
         static void Hello(string name)
         {
-            Console.WriteLine($"Have a nice day {name}");
+            if (name == "Bob" || name == "Alice")
+            {
+                Console.WriteLine($"Vitej zpet {name}");
+            }
+            else
+            {
+                Console.WriteLine($"Have a nice day {name}");
+            }
         }
     }
 }
