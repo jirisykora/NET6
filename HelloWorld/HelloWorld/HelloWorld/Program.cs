@@ -10,10 +10,11 @@ namespace HelloWorld
             AddAndPrint(10, 45);
         }
 
-        static void AddAndPrint(int a, int b)
+        static int AddAndPrint(int a, int b)
         {
             int sum = a + b;
-            Console.WriteLine(a + "+" + b + "=" + sum);
+            Console.WriteLine($"{a} + {b} = {sum}");
+            return sum;
         }
     }
 }
