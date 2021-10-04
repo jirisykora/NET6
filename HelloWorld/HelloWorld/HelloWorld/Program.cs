@@ -6,11 +6,23 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int a = 2456;
+            const int c_a = 155;
+            const int c_b = 255;
+            
+            int a = 255;
             int b = 45678;
+            bool res = false;
 
-            Console.WriteLine($"a = {a}, b= {b}");
-            int res = Max(a, b);
+            if (a > b)
+                res = true;
+            else if (a == c_a || a == c_b)
+                res = false;
+            else
+                res = false;
+            
+            Console.WriteLine($"a > b: {res}");
+            
+
             
             
         }
