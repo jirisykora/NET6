@@ -6,9 +6,19 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadej jmeno: ");
-            //var inpstr = Console.ReadLine();
-            Hello(Console.ReadLine());
+            
+
+            Console.WriteLine("Zadej teplotu ve F: ");
+            var inpstr = Console.ReadLine();
+            double temp = double.Parse(inpstr);
+            Console.WriteLine($"Teplota je {FahrenheitToCelsius(temp)} °C");
+        }
+
+        static double FahrenheitToCelsius(double temp)
+        {
+            double cel = (temp - 32) / 1.8;
+
+            return cel;
         }
 
         static int Max(int a, int b)
