@@ -6,25 +6,9 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            const int c_a = 155;
-            const int c_b = 255;
-            
-            int a = 255;
-            int b = 1;
-            bool res = false;
-            
-            if (a == c_a || a == c_b)
-                res = false;
-            else if (a > b)
-                res = true;
-            else
-                res = false;
-            
-            Console.WriteLine($"a > b: {res}");
-            
-
-            
-            
+            Console.WriteLine("Zadej jmeno: ");
+            var inpstr = Console.ReadLine();
+            Hello(inpstr);
         }
 
         static int Max(int a, int b)
