@@ -35,7 +35,7 @@ namespace HelloWorld
 
         static void Hello(string name)
         {
-            if (name == "Bob" || name == "Alice")
+            if (name.ToLower() == "bob" || name.ToLower() == "alice")
             {
                 Console.WriteLine($"Vitej zpet {name}");
             }
