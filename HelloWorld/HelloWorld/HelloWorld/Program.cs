@@ -10,13 +10,13 @@ namespace HelloWorld
             const int c_b = 255;
             
             int a = 255;
-            int b = 45678;
+            int b = 1;
             bool res = false;
-
-            if (a > b)
-                res = true;
-            else if (a == c_a || a == c_b)
+            
+            if (a == c_a || a == c_b)
                 res = false;
+            else if (a > b)
+                res = true;
             else
                 res = false;
             
