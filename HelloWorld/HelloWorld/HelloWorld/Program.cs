@@ -6,21 +6,34 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int a = 20;
-            int b = 30;
+            int a = 2456;
+            int b = 45678;
 
-            Console.WriteLine($"a={a}, b={b}");
+            Console.WriteLine($"a = {a}, b= {b}");
+            int res = GetGreaterNumber(a, b);
+            if(res == a)
+            {
+                Console.WriteLine($"Cislo {a} je vetsi nez cislo {b}");
+            }
+            else
+            {
+                Console.WriteLine($"Cislo {b} je vetsi nez cislo {a}");
+            }
             
-            int c = a;
-            a = b;
-            b = c;
-
-            Console.WriteLine($"a={a}, b={b}");
-
-            Console.WriteLine("Hello World!");
-            AddAndPrint(10, 45);
-            Hello("Jiri");
         }
+
+        static int GetGreaterNumber(int a, int b)
+        {
+            if(a > b)
+            {
+                return a;
+            }
+            else
+            {
+                return b;
+            }
+        }
+
 
         static int AddAndPrint(int a, int b)
         {
