@@ -13,7 +13,7 @@ namespace HelloWorld
         static void AddAndPrint(int a, int b)
         {
             int sum = a + b;
-            Console.WriteLine(sum);
+            Console.WriteLine(a + "+" + b + "=" + sum);
         }
     }
 }
