@@ -8,6 +8,7 @@ namespace HelloWorld
         {
             Console.WriteLine("Hello World!");
             AddAndPrint(10, 45);
+            Hello("Jiri");
         }
 
         static int AddAndPrint(int a, int b)
@@ -15,6 +16,11 @@ namespace HelloWorld
             int sum = a + b;
             Console.WriteLine($"{a} + {b} = {sum}");
             return sum;
+        }
+
+        static void Hello(string name)
+        {
+            Console.WriteLine($"Have a nice day {name}");
         }
     }
 }
