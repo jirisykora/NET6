@@ -27,6 +27,10 @@ namespace HelloWorld
             return X + ";" + Y;
         }
 
+        public int GetArea()
+        {
+            return X * Y;
+        }
         public override string ToString()
         {
             return GetXY();
