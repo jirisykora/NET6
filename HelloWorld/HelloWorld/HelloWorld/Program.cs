@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace HelloWorld
 {
@@ -20,24 +22,35 @@ namespace HelloWorld
             //    // deleni nulou
             //}
 
+            //list - dynamicka kolekce
+            List<Person> lide = new List<Person>();
 
+            var o1 = new Person("Jiri", "Sykora", 54);
+            var o2 = new Person("Jan", "Novák", 25);
+            var o3 = new Person("Josef", "Koblasa", 55);
+            var o4 = new Person("Jana", "Novákova", 26);
 
+            lide.Add(o1);
+            lide.Add(o2);
+            lide.Add(o3);
+            lide.Add(o4);
 
-            Person o1 = new Person("Jiri", "Sykora");
-            o1.Age = 54;
+            
+            foreach(var p in lide)
+            {
+                Console.WriteLine(p);
+            }
 
-            Person o2 = new Person("Jan", "Novák", 25);
+            // ulozit do souboru
+            // FirstName;LastName;Age
+            string file = "lide.txt";
+            foreach (var p in lide)
+            {
+                var str = $"{p.FirstName};{p.LastName};{p.Age}{Environment.NewLine}";
+                File.AppendAllText(file, str);
+            }
 
-            Point bod1 = new Point(45, 56);
-            Point bod2 = new Point();
-
-            int area = bod1.GetArea();
-            Console.WriteLine($"Bod 1 obsah: {area}");
-
-            Console.WriteLine($"Bod 1: {bod1}");
-            Console.WriteLine($"Bod 2: {bod2}");
-            Console.WriteLine($"Osoba 1: {o1}");
-            Console.WriteLine($"Osoba 2: {o2}");
+            Console.WriteLine($"ulozeno do souboru {file}");
         }
     }
 }
