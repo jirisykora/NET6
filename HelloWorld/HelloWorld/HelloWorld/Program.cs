@@ -6,15 +6,53 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadej teplotu ve F: ");
-            var inpstr = Console.ReadLine();
-            double temp = double.Parse(inpstr);
-            Console.WriteLine($"Teplota je {FahrenheitToCelsius(temp)} °C");
+            // úkol:
+            // uživatel zadá rok narození a program
+            // mu vypíše do jaké patří generace
+
+            // Baby Boomerss — born 1946 - 1964
+            // Generation X — born 1965 - 1980
+            // Millenials — born 1981 - 1996
+            // Generation Z — born 1997 - 2012
+            // Generation Alpha — born 2013 -
+            Console.WriteLine("Zadej rok narození: ");
+            string outstr = GenerationPrint(Console.ReadLine());
+            Console.WriteLine($"Patrite do {outstr}");
+            //var inpstr = Console.ReadLine();
+
+            
+
+
         }
 
-        static double FahrenheitToCelsius(double temp)
+
+        static string GenerationPrint(string year)
         {
-            return Math.Round(((temp - 32) / 1.8), 2);
+            int yob = int.Parse(year);
+            if (yob >= 1946 && yob <= 1964)
+            {
+                return "Baby Boomers";
+            }
+            else if(yob >= 1965 && yob <= 1980)
+            {
+                return "Generation X";
+            }
+            else if (yob >= 1981 && yob <= 1996)
+            {
+                return "Millenials";
+            }
+            else if (yob >= 1997 && yob <= 2012)
+            {
+                return "Generation Z";
+            }
+            else if (yob >= 2013)
+            {
+                return "Generation Alpha";
+            }
+            else
+            {
+                return "UNKNOWN GENERATION";
+            }
         }
 
         static int Max(int a, int b)
