@@ -19,11 +19,17 @@ namespace HelloWorld
             //string outstr = GenerationPrint(Console.ReadLine());
             //Console.WriteLine($"Patrite do {outstr}");
             //var inpstr = Console.ReadLine();
-            var daynumber = 3;
-            var dayname = GetDayName(daynumber);
-            Console.WriteLine($"Jméno dne je {dayname}.");
 
 
+            var number = 1;
+            var res = number % 2;
+
+            while (res != 0) {
+                Console.WriteLine($"Zadej sudé číslo: ");
+                number = int.Parse(Console.ReadLine());
+                res = number % 2;
+             }
+            
 
         }
 
