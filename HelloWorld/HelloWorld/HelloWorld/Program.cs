@@ -25,32 +25,30 @@ namespace HelloWorld
             //list - dynamicka kolekce
             List<Person> lide = new List<Person>();
 
-            var o1 = new Person("Jiri", "Sykora", 54);
-            var o2 = new Person("Jan", "Novák", 25);
-            var o3 = new Person("Josef", "Koblasa", 55);
-            var o4 = new Person("Jana", "Novákova", 26);
 
-            lide.Add(o1);
-            lide.Add(o2);
-            lide.Add(o3);
-            lide.Add(o4);
-
-            
-            foreach(var p in lide)
-            {
-                Console.WriteLine(p);
-            }
 
             // ulozit do souboru
             // FirstName;LastName;Age
             string file = "lide.txt";
-            foreach (var p in lide)
+
+            // nacist ze souboru do Listu
+            // a vypsat nactene lidi do konzolw
+
+            var str = File.ReadAllLines(file);
+
+            foreach (var line in str)
             {
-                var str = $"{p.FirstName};{p.LastName};{p.Age}{Environment.NewLine}";
-                File.AppendAllText(file, str);
+                var words = line.Split(';');
+                var p = new Person(words[0], words[1], int.Parse(words[2]));
+                lide.Add(p);
             }
 
-            Console.WriteLine($"ulozeno do souboru {file}");
+            foreach (var p in lide)
+            {
+                Console.WriteLine(p);
+            }
+
+            
         }
     }
 }
