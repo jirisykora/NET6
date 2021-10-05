@@ -15,18 +15,41 @@ namespace HelloWorld
             // Millenials — born 1981 - 1996
             // Generation Z — born 1997 - 2012
             // Generation Alpha — born 2013 -
-            Console.WriteLine("Zadej rok narození: ");
-            string outstr = GenerationPrint(Console.ReadLine());
-            Console.WriteLine($"Patrite do {outstr}");
+            //Console.WriteLine("Zadej rok narození: ");
+            //string outstr = GenerationPrint(Console.ReadLine());
+            //Console.WriteLine($"Patrite do {outstr}");
             //var inpstr = Console.ReadLine();
+            var daynumber = 3;
+            var dayname = GetDayName(daynumber);
+            Console.WriteLine($"Jméno dne je {dayname}.");
 
-            
 
 
         }
 
-
-        static string GenerationPrint(string year)
+        static string GetDayName(int day)
+        {
+            switch (day)
+            {
+                case 1:
+                    return "Pondlělí";
+                case 2:
+                    return "Úterý";
+                case 3:
+                    return "Středa";
+                case 4:
+                    return "Čtvrtek";
+                case 5:
+                    return "Pátek";
+                case 6:
+                    return "Sobota";
+                case 7:
+                    return "Neděle";
+                default:
+                    return "neznámý den";
+            }
+        }
+                static string GenerationPrint(string year)
         {
             int yob = int.Parse(year);
             if (yob >= 1946 && yob <= 1964)
