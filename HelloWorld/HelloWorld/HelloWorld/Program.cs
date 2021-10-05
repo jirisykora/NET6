@@ -21,16 +21,23 @@ namespace HelloWorld
             //var inpstr = Console.ReadLine();
 
 
-            var number = 1;
-            var res = number % 2;
+                    
+            Console.WriteLine($"Zadej číslo: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Vysledek: {Sum(number)}");
 
-            while (res != 0) {
-                Console.WriteLine($"Zadej sudé číslo: ");
-                number = int.Parse(Console.ReadLine());
-                res = number % 2;
-             }
-            
+        }
 
+
+        static int Sum(int number)
+        {
+            int sum = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                sum = sum + i;
+            }
+
+            return sum;
         }
 
         static string GetDayName(int day)
